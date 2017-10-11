@@ -281,6 +281,8 @@ OUTPUT capitulos/motivacao.aux
 INPUT capitulos/motivacao.tex
 INPUT capitulos/motivacao.tex
 OUTPUT capitulos/objetivos.aux
+INPUT capitulos/objetivos.tex
+INPUT capitulos/objetivos.tex
 INPUT main_archive.bbl
 INPUT main_archive.bbl
 INPUT main_archive.aux
