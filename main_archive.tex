@@ -38,7 +38,7 @@
             citecolor=black,
             pdftitle={Filtro Prensa},
           pdfauthor={Marcus Bruno Fernandes Silva},
-          pdfsubject={Filtro Prensa},
+          pdfsubject={Planta Piloto de Filtro Prensa},
           pdfkeywords={filtro prensa}%
 ]{hyperref} % para referência cruzadas
 %\usepackage{hyperref}            % para referência cruzadas
@@ -68,6 +68,8 @@
 \usepackage{titling}
 \usepackage[version=4]{mhchem}
 \usepackage{array}
+\usepackage{siunitx}
+\usepackage{enumitem}
 \usepackage{booktabs}
 % \usepackage{nameref} % Referencia capitulos por nome
 %\usepackage[authoryear]{natbib}
@@ -89,7 +91,7 @@ Hernandez Rodrigues}
         Marina Leticia Alves Ferreira}
 \subtitle{Exemplo para os Usuários}
 %\author{Joao}
-\title{Filtro Prensa}
+\title{Planta Piloto de Filtro Prensa}
 \engtitle{Use of Uflamon Class}
 %\engsubtitle{Sample for Users}
 %\edicao{3$^a$ edição revista, atualizada e ampliada}
@@ -195,8 +197,10 @@ Hernandez Rodrigues}
 %==============================================================================
 % incluindo os capitulos
 
-\include{capitulos/motivacao} % esse é meu
-\include{capitulos/objetivos} % esse é meu
+
+\include{capitulos/introducao}
+\include{capitulos/motivacao}
+\include{capitulos/descricao}
 
 %==============================================================================
 
