@@ -1,0 +1,221 @@
+\documentclass{uflamon}          % classe base para a monografia
+
+%==============================================================================
+% Utilizacao de pacotes
+\usepackage[T1]{fontenc}         % usa fontes postscript com acentos
+\usepackage[brazil]{babel}       % hifenização e títulos em português do Brasil
+\usepackage[utf8]{inputenc}     % permite edição direta com acentos
+\usepackage{amsmath}             % pacote da AMS para Matemática Avançada
+\usepackage{amssymb}             % símbolos extras da AMS
+\usepackage{latexsym}            % símbolos extras do LaTeX
+\usepackage{graphicx}            % para inserção de gráficos
+\usepackage{listings}            % para inserção de código
+\usepackage{fancyvrb}            % para inserção de saídas de comandos
+%\usepackage{enumerate}           % para personalizar lista enumeradas 
+											%(incluso na classe)
+\usepackage{longtable}           % para tambelas muito grandes NOVO!!!!
+
+\usepackage{colortbl} % cores em tabelas
+\newcolumntype{Z}{|>{\columncolor[gray]{0.9}}l|} %cor cinza em células
+%\usepackage{array} % já incluso na classe
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{multirow} % para juntar duas linhas em uma só
+\usepackage{multicol} % para uso de várias colunas
+%\usepackage{subfig}
+
+% cores para os links cruzados
+\usepackage{color}
+\definecolor{rltred}{rgb}{0.2,0,0}
+\definecolor{rltgreen}{rgb}{0,0.2,0}
+\definecolor{rltblue}{rgb}{0,0,0.2}
+
+\usepackage[colorlinks=true,
+            urlcolor=rltblue,       % \href{...}{...} external (URL)
+            filecolor=rltgreen,     % \href{...} local file
+            linkcolor=black,       % \ref{...} and \pageref{...}
+            citecolor=black,
+            pdftitle={Filtro Prensa},
+          pdfauthor={Marcus Bruno Fernandes Silva},
+          pdfsubject={Filtro Prensa},
+          pdfkeywords={filtro prensa}%
+]{hyperref} % para referência cruzadas
+%\usepackage{hyperref}            % para referência cruzadas
+\usepackage{subfigure}           % figuras dentro de figuras
+\usepackage{caption}            % remodelando o formato dos títulos de 
+                                 % tabelas e figuras
+
+% configuração padrão do listings   
+\lstset{%
+   language=Java,
+   extendedchars=true,
+   tabsize=3,
+   basicstyle=\footnotesize\ttfamily,
+   stringstyle=\em,
+   showstringspaces=false 
+}
+
+%abnt-emphasize=bf coloca o título das bibliografias em negrito
+%abnt-thesis-year=both
+\usepackage[alf,num,abnt-etal-cite=3,abnt-etal-list=3,abnt-url-package=url,abnt-emphasize=bf]{abntex2cite}
+
+% redefinindo formatação de títulos de tabelas e figuras
+
+%==============================================================================
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{float}
+\usepackage{titling}
+\usepackage[version=4]{mhchem}
+\usepackage{array}
+\usepackage{booktabs}
+% \usepackage{nameref} % Referencia capitulos por nome
+%\usepackage[authoryear]{natbib}
+
+% Especificando hifenizações que por ventura LaTeX não saiba fazer
+% Por padrão 99,9% dos termos em português devem ser hifenizados corretamente.
+\hyphenation{hardware software Li-nux am-bien-te diag-nos-ti-car coor-de-na-ção 
+  FAE-PE Recovery TelEduc Williams UFLA Sérgio Renata Reynolds disciplina Iara
+Hernandez Rodrigues}
+
+%==============================================================================
+% Dados da monografia, capa: autor, titulo, banca, etc... - SUBSTITUA DE ACORDO
+%==============================================================================
+\author{Gabriela Nunes \\
+        Gustavo Henrique de Souza Paiva \\
+        Karen Leticia Sanchez Costa \\
+        Larissa Souza Castro \\
+        Marcus Bruno Fernandes Silva \\
+        Marina Leticia Alves Ferreira}
+\subtitle{Exemplo para os Usuários}
+%\author{Joao}
+\title{Filtro Prensa}
+\engtitle{Use of Uflamon Class}
+%\engsubtitle{Sample for Users}
+%\edicao{3$^a$ edição revista, atualizada e ampliada}
+\date{2017}
+\newcommand{\orient}{Professora Iara Hernandez Rodriguez}
+\newcommand{\disciplina}{GNE340}
+\tipo{Projeto entregue e apresentado à \orient{} como requisito da disciplina \disciplina{}.}
+\orientador{\orient}
+\newcommand{\otipo}{Projeto entregue e apresentado à \orient{} como requisito da disciplina \disciplina{}.}
+\newcommand{\olocal}{Lavras -- MG}
+\local{Lavras -- MG}
+
+%##################################################
+
+\newcommand \fazercapa{
+\begin{titlepage}
+    \centering
+
+    \includegraphics[scale=0.45]{logoufla.jpg}%
+
+    \vspace{1cm}
+
+    \Large\theauthor
+    
+    \vspace{\stretch{1}}
+
+    \bfseries\LARGE\MakeUppercase\thetitle
+
+    \vspace{\stretch{1}}
+
+    \Large\MakeUppercase\olocal\\
+    \MakeUppercase\thedate
+    \null
+    \cleardoublepage
+\end{titlepage}
+}
+
+\newcommand \fazerfolhaderosto{
+    \begin{titlepage}
+        \newpage
+
+        \begin{center}
+            \MakeUppercase\theauthor
+
+            \vspace{\stretch{1}}
+
+            \textbf{\MakeUppercase\thetitle}
+
+            \vspace{\stretch{1}}
+            
+            \hfill\begin{minipage}{8cm}{\otipo}\end{minipage} % tipo da monografia
+
+            \vspace{\stretch{.58}}
+
+            \ifthenelse{\equal{\@orientador}{\@empty}} % % se orientador nao existir,
+            {}%                                            % nao produza nada
+            {\orient\\
+             Orientadora
+            }
+
+            \vspace{\stretch{.86}} 
+
+            \textbf{\MakeUppercase\olocal}\\ 
+            \textbf{\MakeUppercase\thedate}
+            \end{center}
+    \end{titlepage}
+}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\graphicspath{{./figuras/}}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\newcommand{\R}{$^{\tiny{\textregistered}}$~}
+
+
+%==============================================================================
+
+% Meus comandos
+
+\newcommand{\citeay}[1]{\citeauthoronline{#1} (\citeyear{#1})}
+\newcommand{\citeayp}[1]{(\citeauthoronline{#1} \citeyear{#1})}
+\newcommand{\citean}[1]{\citeauthoronline{#1} \cite{#1}}
+\newcommand{\pa}[1]{\left(#1 \right)}
+
+%==============================================================================
+% Começar o documento
+
+%\newsubfloat{figure}
+
+%\includeonly{capitulos/materiais_metodos,capitulos/resultados}
+\begin{document}
+
+\fazercapa
+
+\fazerfolhaderosto
+
+\tableofcontents
+
+\clearpage
+
+\pagestyle{ufla}
+
+%==============================================================================
+% incluindo os capitulos
+
+\include{capitulos/motivacao} % esse é meu
+\include{capitulos/objetivos} % esse é meu
+
+%==============================================================================
+
+% Incluindo bibliografia
+%\bibliographystyle{plain}             % estilo para labels em numeros
+%\bibliographystyle{alpha}             % estilo para labels em iniciais
+\bibliographystyle{abntex2-num}         %% estilo para referências usando ABNT, 
+ %para usar o abntex2-alf precisa arrumar o nome dos autores na bibliografia
+%\bibliographystyle{abntex2-alf}           % estilo para referências usando ABNT, 
+
+%inclui Referências Bibliográficas
+\referencias
+\bibliography{bibliografia/b}
+
+%==============================================================================
+% Fim do texto
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
