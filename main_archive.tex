@@ -58,7 +58,7 @@
 
 %abnt-emphasize=bf coloca o título das bibliografias em negrito
 %abnt-thesis-year=both
-\usepackage[alf,num,abnt-etal-cite=3,abnt-etal-list=3,abnt-url-package=url,abnt-emphasize=bf]{abntex2cite}
+\usepackage[alf,num,abnt-etal-cite=3,abnt-etal-list=0,abnt-url-package=url,abnt-emphasize=bf]{abntex2cite}
 
 % redefinindo formatação de títulos de tabelas e figuras
 
@@ -172,8 +172,9 @@ Hernandez Rodrigues}
 % Meus comandos
 
 \newcommand{\citeay}[1]{\citeauthoronline{#1} (\citeyear{#1})}
-\newcommand{\citeayp}[1]{(\citeauthoronline{#1} \citeyear{#1})}
+\newcommand{\citeayp}[1]{(\citeauthoronline{#1}, \citeyear{#1})}
 \newcommand{\citean}[1]{\citeauthoronline{#1} \cite{#1}}
+\newcommand{\pderr}[2]{\frac{\partial}{\partial #2}(#1)}
 \newcommand{\pa}[1]{\left(#1 \right)}
 
 %==============================================================================

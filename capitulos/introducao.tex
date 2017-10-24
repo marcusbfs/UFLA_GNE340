@@ -38,12 +38,12 @@ buscando otimizar o processo \citeayp{isenmann2012operaccoes} .
   resultantes apresentam baixa umidade e pode ser automatizado. Porém, tem as
   desvantagens de difícil lavagem e manutenção, as placas podem sofrer fissuras
   e romper-se e a técnica é muito sensível às variações das características dos
-  resíduos.
+  resíduos \citeayp{Cremasco14}.
 
 
 \item[-] Filtro a vácuo
 
-  Os filtros a vácuo podem ser alimentados no fundo ou no topo do equipamento.
+  Ainda segundo o autor os filtros a vácuo podem ser alimentados no fundo ou no topo do equipamento.
   Caracteriza-se por conduzir tortas secas de pequena espessura, e operar
   continuamente sob baixa queda de pressão. É utilizado na indústria
   sucroalcooleira, no modelo contínuo de tambor rotativo a vácuo, por exemplo.
@@ -65,7 +65,7 @@ características que serão essenciais na otimização da filtração. É import
 que ao entrar em contato com a suspensão que será tratada, o meio filtrante não
 sofra fissuras, rompimentos ou ataques químicos. Ter boa e adequada distribuição
 dos poros faz com que o curso da filtração não seja comprometido, seja fácil
-fazer a limpeza e o custo seja baixo.
+fazer a limpeza e o custo seja baixo \citeayp{Cremasco14}.
 
 Após o início da operação, a torta se tornará meio filtrante, por isso para
 obter filtrado límpido, é importante voltar os primeiros volumes ao processo,
@@ -73,12 +73,187 @@ visto que nas primeiras porções de filtrado há traços de particulado.
 
 Alguns meios utilizados que merecem ser citados são algodão, polímeros
 sintéticos, metais, e no caso de filtros granulares, cascalho, areia, antracito
-e carvão ativado.
+e carvão ativado \citeayp{Cremasco14}.
+
+
+\subsection{Fluidodinâmica da filtração}
+
+Existem dois tipos de filtração granular: rápida e lenta. Na filtração rápida,
+as partículas apresentam-se diluídas na suspensão e não apresentam interação com
+o material filtrante, de modo a não obstruir os poros do material granular. Na
+filtração lenta, a remoção de partículas em suspensão depende de interações
+entre os sólidos e o meio filtrante (forças repulsivas e atrativas, e mecanismos
+como a difusão e exclusão por tamanho, sendo uma abordagem microscópica, ao se
+considerar esses mecanismos, e macroscópica, ao se desconsiderar \citeayp{Cremasco14}.
+
+A descrição generalizada pode ser visualizada na Tabela \ref{table:fluidodinamicafiltracao}:
+
+\newcommand{\tbu}{\textbf{u}}
+\begin{table}[H]
+\centering
+\caption{Descrição da fluidodinâmica da filtração \citeayp{Cremasco14}}
+\label{table:fluidodinamicafiltracao}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{2.4cm}l}
+\toprule
+Equação da continuidade da fase fluida      & $ \pderr{\rho\varepsilon}{t}+\vec{\nabla}\cdot(\rho\varepsilon \tbu{}) = -\phi$\\[1.4cm]
+Equação da continuidade da fase particulada & $ \pderr{\rho_p\varepsilon_p}{t}+\vec{\nabla}\dot(\rho_p\varepsilon_p \tbu{}_p) = \phi$\\[1.4cm]
+Equação do movimento da fase fluida         & $ \pderr{\rho\varepsilon\tbu{}}{t}+\vec{\nabla}\cdot(\rho\varepsilon\tbu{}\tbu{})=\vec{\nabla}\cdot\textbf{T}-\beta(\tbu{}-\tbu{}_p)+\rho\textbf{b}$\\[1.4cm]
+Equação do movimento da fase particulada    & $ \pderr{\rho_p\varepsilon_p\tbu{}_p}{t}+\vec{\nabla}\cdot(\rho_p\varepsilon_p\tbu{}_p\tbu{}_p)=\vec{\nabla}\cdot\textbf{T}_p-\beta(\tbu{}-\tbu{}_p)+\varepsilon_p(\rho_p-\rho)\textbf{b}$\\\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Na Tabela \ref{table:fluidodinamicafiltracao} o termo de campo \textbf{b} será
+definido a medida que se adoltar qual filtro será utilizado na operação:
+gravitaiconal ou rotativo, por exemplo. Já a grandeza $\phi$ refere-se ao fluxo
+de captura, por meio do material, nas partículas presentes na suspensão a ser
+filtrada. Deve-se considerar essa grandeza quando há filtração lenta em filtro
+granular, na filtração granular rápida e filtração com ou sem formação de torta
+deformável essa grandeza não deve ser considerada \citeayp{Cremasco14}. Conforme
+o autor, esse parâmetro pode ser representado das seguintes formas:
+
+\begin{enumerate}
+\item[] Abordagem microscópica
+  \begin{equation}
+    \phi = D_{ef} \nabla^2(\rho_p\varepsilon_p)
+  \end{equation}
+  
+\item[] Abordagem macroscópica
+  \begin{equation}
+    \phi = \pa{\frac{\rho_p\varepsilon_p}{\delta}}\tbu{}\lambda
+  \end{equation}
+\end{enumerate}
+
+O tensor tensão da fase fluida, \textbf{T}, é descrito pela componente de
+pressão, $p$, nesta fase:
+
+\begin{equation}
+  \label{eq:tensortensao}
+  \textbf{T} = p \textbf{I}
+\end{equation}
+
+O coeficiente $\beta$, parâmetro de arraste, é referente a parcela da
+contribuição Darcyniana do escoamento:
+\begin{equation}
+  \label{eq:parametroB}
+  \beta = \frac{\mu\varepsilon}{k(\varepsilon)}
+\end{equation}
+onde $k(\varepsilon)$ pode ser obtido por correlações encontradas na literatura.
+
+A descrição da fluidodinâmica da filtração depende de qual tipo de filtro será
+utilizado, e também do conhecimento de informações, como: características
+físicas e químicas das fases, reologia da suspensão e da natureza do meio
+filtrante \citeayp{Cremasco14}.
+
+\subsection{Filtração com formação de torta: teoria simplificada da filtração}
+
+A operação de filtração de suspensões que resulta na formação de tortas
+caracteriza-se por exibir variação de porosidade da matriz porosa (torta) ao
+longo do tempo e da sua estrutura, causada pela percolação do fluido,
+ocasionando o meio poroso deformável.
+
+A formulação para a fluidodinâmica advém da análise da Tabela
+\ref{table:fluidodinamicafiltracao}, considerando-se nula a contribuição do
+fluxo de captura. São consideradas as seguintes hipóteses
+\citeayp{massarani2001fluidodinamica}:
+
+\begin{itemize}
+\item[-] o tensor tensão da fase fluida é descrito pela componente de pressão;
+\item[-] o valor da velocidade da fase particulada ser bem menor do que o valor
+  da velocidade da fase fluida, assim a velocidade relativa $U$, fica sendo a
+  velocidade do fluido.
+\end{itemize}
+
+Além disso, são estabelecidas as seguintes hipóteses para a filtração com formação de
+torta \citeayp{Cremasco14}: 
+\begin{itemize}
+\item[-] a fase fluida comporta-se como fluido newtoniano e incompressível; 
+\item[-] escoamento unidimensional de onde resulta, para a velocidade relativa:
+  $$U = u = q/\varepsilon$$
+  onde $u$ é a velocidade intersticial da fase fluida, $q$ é a velocidade
+  superficial da fase fluida e $\varepsilon$ é a porosidade do meio filtrante.
+\end{itemize}
+
+Correlacionando os resultados da filtração com as condições operacionais,
+expressas pela queda de pressão no filtro, considerando que a torta e o meio
+filtrante são meios porosos percolados em série pelo fluido, e que a velocidade
+superficial do fluido e a massa de sólido seco na torta estão relacionadas ao
+volume de filtrado $V$, ao tempo $t$, à área de filtração $A$ e à concentração de
+sólidos na suspensão $C$, obtém-se a equação da filtração
+\citeayp{massarani2001fluidodinamica}:
+\newcommand{\lalphal}{\textrm{<}\alpha\textrm{>}}
+\begin{equation}
+  \label{eq:filtracao}
+  \frac{dt}{dV} = \frac{\mu}{\textrm{Área}(\Delta p)} \left[\lalphal{} S_p \rho \gamma \frac{V}{\textrm{Área}} + R_m\right]
+\end{equation}
+
+Onde $\mu$ é a viscosidade do fluido, $\Delta p$ é queda de pressão do filtro,
+$\lalphal{}$ é a resistividade média, $S_p$ é a fração mássica absoluta do
+sólido, $\rho$ é a massa específica do fluido, $R_m$ é a resistência do meio
+filtrante e $\gamma$ é definido por:
+\begin{equation}
+  \gamma = 1 + (1 - \varepsilon_p) \frac{V_t}{V}
+\end{equation}
+Onde $\varepsilon_p$ é a porosidade da partícula e $V_t$ é o volume da torta.
 
 
 \section{Aplicabilidade}\label{sec:aplicabilidade}
 
-Gabi
+As aplicações do filtro prensa envolvem situações onde há a intenção de separar
+sólidos e líquidos, de forma que, após o processo de filtração, pode-se
+reutilizar tanto o líquido filtrado como também o sólido retido. Esse tipo de
+filtro apresenta vantagens que são favoráveis ao meio ambiente e melhoram a
+sustentabilidade da empresa, como baixo custo de manutenção, menor consumo de
+energia, produção de uma torta seca de fácil manuseio e transporte e
+reaproveitamento da água. O filtro prensa é utilizado em diversos seguimentos,
+atendendo aplicações para ``lodos de tratamento de água potável e industrial de
+águas subterrâneas, de superfície e de rios, efluentes industriais, mineração,
+cerâmica, metalurgias, tintas e pigmentos, celulose e indústria química,
+alimentícia, de bebidas e farmacêutica, além dos setores de biocombustíveis,
+derivados de petróleo, sucroalcooleiro e fertilizantes'' \citeayp{Rubim2012}.
+
+Um seguimento em que os filtros prensa se destacam é no tratamento de água e
+esgoto, onde são utilizados na desidratação mecânica do lodo gerado na ETA e na
+ETE, ou ainda em processos produtivos de lixiviação, cristalização, decantação
+ou outros. Nessa atividade, eles são considerados os mais eficientes em
+comparação com outros equipamentos por seus produtos sólidos apresentarem a
+menor umidade residual, o que é vantajoso pela diminuição de custos com
+destinação e transporte, além de ser desejável um baixo teor de umidade nos
+resíduos a serem depositados em aterros \citeayp{Rubim2012}.
+
+Na indústria alimentícia também existem várias aplicações para os filtros
+prensa. Pode citar-se o refino de óleos vegetais, um processo onde ``os ácidos
+graxos livres são neutralizados com uma base, resultando em sabão. A mistura é
+centrifugada, lavada com água e centrifugada mais uma vez, quando então é
+clareada com diatomáceas. A separação dessas diatomáceas é feita num filtro
+prensa, com elemento filtrante de poros reduzidos'' \citeayp{Novazzi2008}.
+
+No ramo de bebidas há também algumas aplicações bem comuns dos filtros prensa. A
+primeira delas é na produção de cerveja, onde a filtração é feita para a
+separação de células de leveduras e de partículas de proteínas coaguladas em
+suspensão, que tornam a cerveja turva. Uma outra aplicação é na produção de
+refrigerantes, nesse caso os filtros prensa atuam na purificação do xarope, a
+fim de reter a impurezas presentes em suspensão. E, finalmente, os filtros
+prensa são também vistos na produção de sucos de frutas, onde são empregados na
+separação do bagaço e da polpa desses vegetais \citeayp{Novazzi2008}.
+
+Outro segmento em que é os filtros prensa são utilizados é a indústria de
+metais. Nelas, os filtros prensa aparecem principalmente quando se objetiva
+reduzir bastante o volume final de sólidos. Um exemplo é a galvanoplastia, um
+processo em que as peças passam por um banho eletrolítico para melhoria da sua
+resistência, nesse caso, o filtro prensa é utilizado para separar a água do lodo
+galvânico, formado por resíduos gerados no processo. Já nas siderúrgicas,
+segundo Renato Merne, Gerente Industrial e Especialista em Tecnologia
+Ambiental/Automação da Tecitec, fabricante de filtros prensa, eles ``são
+empregados para filtrar a água utilizada nos lavadores de gases dos fornos de
+fundição do ferro gusa, separando desta forma os sólidos existentes''
+\citeayp{Dias2008}.
+
+Em suma, é notável a existência de inúmeros outros exemplos de aplicações dos
+filtros prensa em diferentes tipos de indústrias, de forma que a compreensão do
+seu funcionamento pelos estudantes de Engenharia Química é de grande
+importância.
 
 \section{Objetivo}\label{sec:objetivos} 
 
