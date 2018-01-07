@@ -23,7 +23,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \usepackage{multirow} % para juntar duas linhas em uma só
 \usepackage{multicol} % para uso de várias colunas
-%\usepackage{subfig}
+% \usepackage{caption}
 
 % cores para os links cruzados
 \usepackage{color}
@@ -42,9 +42,9 @@
           pdfkeywords={filtro prensa}%
 ]{hyperref} % para referência cruzadas
 %\usepackage{hyperref}            % para referência cruzadas
-\usepackage{subfigure}           % figuras dentro de figuras
+% \usepackage{subfigure}           % figuras dentro de figuras
 \usepackage{caption}            % remodelando o formato dos títulos de 
-                                 % tabelas e figuras
+\usepackage{subcaption}            % entra em conflito com subfigure
 
 % configuração padrão do listings   
 \lstset{%
@@ -99,9 +99,9 @@ Hernandez Rodrigues}
 \date{2017}
 \newcommand{\orient}{Professora Iara Hernandez Rodriguez}
 \newcommand{\disciplina}{GNE340}
-\tipo{Pré--projeto entregue e apresentado à \orient{} como requisito da disciplina \disciplina{}.}
+\tipo{Projeto entregue e apresentado à \orient{} como requisito da disciplina \disciplina{}.}
 \orientador{\orient}
-\newcommand{\otipo}{Pré--projeto entregue e apresentado à \orient{} como requisito da disciplina \disciplina{}.}
+\newcommand{\otipo}{Projeto entregue e apresentado à \orient{} como requisito da disciplina \disciplina{}.}
 \newcommand{\olocal}{Lavras -- MG}
 \local{Lavras -- MG}
 
